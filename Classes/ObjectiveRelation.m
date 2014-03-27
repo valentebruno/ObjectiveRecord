@@ -19,7 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
+
 #import "ObjectiveRelation.h"
 
 #import "ObjectiveSugar.h"
@@ -175,13 +175,6 @@
     [fetchRequest setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:self.where]];
     [fetchRequest setSortDescriptors:self.order];
     return fetchRequest;
-}
-
-- (NSFetchedResultsController *)fetchedResultsController {
-    return [[NSFetchedResultsController alloc] initWithFetchRequest:[self fetchRequest]
-                                               managedObjectContext:self.managedObjectContext
-                                                 sectionNameKeyPath:nil
-                                                          cacheName:nil];
 }
 
 #pragma mark - Manipulating entities
